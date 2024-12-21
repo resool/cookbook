@@ -1,0 +1,36 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/status":
+    get:
+      summary: v1 status
+      tags:
+      - Status
+      responses:
+        '200':
+          description: Status OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enums:
+                    - ok
+                    example: ok
+                  timestamp:
+                    type: string
+                    description: iso 8601 timestamp format
+                    example: '2024-12-21T15:30:12+00:00'
+                required:
+                - status
+                - timestamp
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

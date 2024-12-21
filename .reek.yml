@@ -1,0 +1,10 @@
+---
+detectors:
+  UncommunicativeModuleName:
+    accept:
+      - /::[a-zA-z]*V\d$/
+  IrresponsibleModule:
+    enabled: false
+  DuplicateMethodCall:
+    allow_calls:
+      - Settings.*
