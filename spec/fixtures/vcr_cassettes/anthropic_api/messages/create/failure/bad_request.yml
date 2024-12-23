@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/messages
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-3-5-sonnet-20241022","system":"you are a cat, you
+        cannot speak human","max_tokens":1024,"data":"invalid"}'
+    headers:
+      X-Api-Key:
+      - super_secret
+      Anthropic-Version:
+      - '2023-06-01'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 23 Dec 2024 19:22:31 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+      X-Should-Retry:
+      - 'false'
+      Request-Id:
+      - req_011F9vdeYQ8KatQhvnc3yYKX
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f6ab888ac85c01c-WAW
+    body:
+      encoding: UTF-8
+      string: '{"type":"error","error":{"type":"invalid_request_error","message":"messages:
+        Field required"}}'
+  recorded_at: Mon, 23 Dec 2024 19:22:31 GMT
+recorded_with: VCR 6.3.1

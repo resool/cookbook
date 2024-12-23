@@ -1,0 +1,4 @@
+anthropic_api:
+  base_url: https://api.anthropic.com/v1
+  model: 'claude-3-5-sonnet-20241022'
+  timeout: 30

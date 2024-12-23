@@ -24,6 +24,10 @@ gem "rswag-api"
 gem "rswag-ui"
 gem "config"
 gem "reek"
+gem "httparty"
+gem "webmock"
+gem "sidekiq"
+gem "vcr"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
