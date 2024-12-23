@@ -1,6 +1,5 @@
 module API
   module V1
-    # V1 API Status endpoint - just to check everything is properly configured
     module Ingredients
       class Create < Base
         params do
