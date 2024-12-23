@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-describe 'Ingredients API', swagger_doc: 'v1/swagger.yaml' do
+describe 'API::V1::Ingredients::Create', swagger_doc: 'v1/swagger.yaml' do
   path '/api/v1/ingredients' do
     post 'create an ingredient' do
       tags 'Ingredients'

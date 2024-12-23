@@ -8,6 +8,7 @@ module API
 
       mount API::V1::Status
       mount API::V1::Ingredients::Create
+      mount API::V1::Recipes::Create
     end
   end
 end
