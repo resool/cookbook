@@ -8,3 +8,10 @@ detectors:
   DuplicateMethodCall:
     allow_calls:
       - Settings.*
+directories:
+  "db/migrate":
+    FeatureEnvy:
+      enabled: false
+    UncommunicativeVariableName:
+      accept:
+        - t
