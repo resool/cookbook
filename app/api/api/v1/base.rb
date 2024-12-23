@@ -10,6 +10,7 @@ module API
       mount API::V1::Ingredients::Create
       mount API::V1::Ingredients::Show
       mount API::V1::Recipes::Create
+      mount API::V1::Recipes::Show
     end
   end
 end
