@@ -7,6 +7,7 @@ module API
       default_error_formatter :json
 
       mount API::V1::Status
+      mount API::V1::Ingredients::Create
     end
   end
 end

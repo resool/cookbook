@@ -1,0 +1,1 @@
+class IngredientInputInvalidError < StandardError; end
