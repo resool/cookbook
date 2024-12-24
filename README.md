@@ -1,17 +1,17 @@
 # README
 
-- use anthropic API to generate recipe based on given ingredients
+uses anthropic API to generate recipe based on given ingredients
 
-## stack:
+## stack
+
   - ruby-3.3.6
   - rails 7.2.2
   - grape
   - sidekiq
   - config
-  - rspec
-  - - factory_bot
-  - - vrc
-  - - rswag
+  - rspec with factory_bot, vcr, rswag, faker
+
+## configuration
   
 1. `cp config/settings/test.yml config/settings/test.local.yml`
 2. `cp config/settings.yml config/settings.local.yml`
