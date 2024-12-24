@@ -10,7 +10,7 @@ module API
         resources :recipes do
           post do
             ingredients = Ingredient.find(params[:ingredient_ids])
-            recipe = ::Recipes::CreateService.new(ingredients: ingredients).call
+            recipe = ::Recipes::FindOrCreateService.new(ingredients: ingredients).call
             Serializers::V1::RecipeSerializer.new(recipe: recipe).to_h
           end
         end

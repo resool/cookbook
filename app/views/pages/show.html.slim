@@ -1,0 +1,21 @@
+.container.py-5
+  h1.text-center.mb-4 Cookbook
+
+  div#main-alert.alert.hide
+
+  section#new-ingredient.mb-5
+    h2 New Ingredient
+    form.d-flex.gap-2 action="/api/v1/ingredients" method="POST"
+      input.form-control name="input" placeholder="Ingredient name" required="true" type="text"
+      button.btn.btn-primary type="submit" Add
+
+  section#new-recipe.mb-5
+    h2 Choose ingredient from the list
+    form action="/api/v1/recipes" method="POST"
+      .list-group
+      button.btn.btn-success.mt-3 type="submit" Generate recipe
+
+  section
+    h2 Recipe
+    .border.p-3#przepis
+      p#recipe.text-muted.alert Choose ingredients first

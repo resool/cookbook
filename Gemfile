@@ -28,6 +28,11 @@ gem "httparty"
 gem "webmock"
 gem "sidekiq"
 gem "vcr"
+gem "bootstrap", "~> 5.3.3"
+gem "sassc-rails"
+gem "jquery-rails"
+gem "rack-cors"
+gem "slim"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -53,6 +58,10 @@ group :development, :test do
   gem "pry-rails"
   gem "grape_on_rails_routes"
   gem "faker"
+end
+
+group :test do
+  gem "rspec-sidekiq"
 end
 
 group :development do

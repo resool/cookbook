@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/messages
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-3-5-sonnet-20241022","system":"\n      you are a very
+        primitive robot that can do only \"bee\" for yes or \"beebee\" for no\n      you
+        are not allowed to output more info\n    ","max_tokens":1024,"messages":[{"role":"user","content":"is
+        this valid food recipe containing those * divided ingredients?"},{"role":"user","content":"potato*tomato"},{"role":"user","content":"potato
+        salad. 1.buy tomato and potato. 2. slice tomato. 3. bake potato. 4. mix potato
+        with tomato"}]}'
+    headers:
+      X-Api-Key:
+      - super-secret
+      Anthropic-Version:
+      - '2023-06-01'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 24 Dec 2024 01:53:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Anthropic-Ratelimit-Requests-Limit:
+      - '50'
+      Anthropic-Ratelimit-Requests-Remaining:
+      - '49'
+      Anthropic-Ratelimit-Requests-Reset:
+      - '2024-12-24T01:53:27Z'
+      Anthropic-Ratelimit-Input-Tokens-Limit:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Remaining:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Reset:
+      - '2024-12-24T01:53:26Z'
+      Anthropic-Ratelimit-Output-Tokens-Limit:
+      - '8000'
+      Anthropic-Ratelimit-Output-Tokens-Remaining:
+      - '8000'
+      Anthropic-Ratelimit-Output-Tokens-Reset:
+      - '2024-12-24T01:53:26Z'
+      Anthropic-Ratelimit-Tokens-Limit:
+      - '48000'
+      Anthropic-Ratelimit-Tokens-Remaining:
+      - '48000'
+      Anthropic-Ratelimit-Tokens-Reset:
+      - '2024-12-24T01:53:26Z'
+      Request-Id:
+      - req_017QR1G8sFMdSTPRE6FjMbfG
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f6cf5298e1e0202-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"msg_0169LBbgrt2DLmddQnWD1CrM","type":"message","role":"assistant","model":"claude-3-5-sonnet-20241022","content":[{"type":"text","text":"bee"}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":92,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":4}}'
+  recorded_at: Tue, 24 Dec 2024 01:53:26 GMT
+recorded_with: VCR 6.3.1

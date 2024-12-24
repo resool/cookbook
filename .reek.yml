@@ -15,3 +15,6 @@ directories:
     UncommunicativeVariableName:
       accept:
         - t
+  "app/sidekiq":
+    UtilityFunction:
+      enabled: false

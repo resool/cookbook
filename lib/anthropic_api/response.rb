@@ -11,6 +11,10 @@ module AnthropicAPI
       self
     end
 
+    def parsed_body
+      @parsed_body ||= response.parsed_response
+    end
+
     private
 
     attr_reader :response

@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- use anthropic API to generate recipe based on given ingredients
 
-Things you may want to cover:
+## stack:
+  - ruby-3.3.6
+  - rails 7.2.2
+  - grape
+  - sidekiq
+  - config
+  - rspec
+  - - factory_bot
+  - - vrc
+  - - rswag
+  
+1. `cp config/settings/test.yml config/settings/test.local.yml`
+2. `cp config/settings.yml config/settings.local.yml`
+3. update test.local.yml and settings.local.yml with your secrets
+4. `rake db:create db:migrate`
+ 
+## web
 
-* Ruby version
+after rails s
+- basic GUI is available at `localhost:3000`
+- api docs are available at `localhost:3000/swagger`
 
-* System dependencies
+## ideas to improvement
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- add pagination, search and validation to ingredients
+- add auth token to rails API

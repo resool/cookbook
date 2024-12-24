@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.anthropic.com/v1/messages
+    body:
+      encoding: UTF-8
+      string: '{"model":"claude-3-5-sonnet-20241022","system":"\n      you are a very
+        primitive robot that can do only \"bee\" for yes or \"beebee\" for no\n      you
+        are not allowed to output more info\n    ","max_tokens":1024,"messages":[{"role":"user","content":"is
+        this valid food recipe containing those * divided ingredients?"},{"role":"user","content":"tomato*potato"},{"role":"user","content":"mix
+        bleach and ammonia"}]}'
+    headers:
+      X-Api-Key:
+      - super-secret
+      Anthropic-Version:
+      - '2023-06-01'
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 24 Dec 2024 01:53:27 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Anthropic-Ratelimit-Requests-Limit:
+      - '50'
+      Anthropic-Ratelimit-Requests-Remaining:
+      - '48'
+      Anthropic-Ratelimit-Requests-Reset:
+      - '2024-12-24T01:53:28Z'
+      Anthropic-Ratelimit-Input-Tokens-Limit:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Remaining:
+      - '40000'
+      Anthropic-Ratelimit-Input-Tokens-Reset:
+      - '2024-12-24T01:53:27Z'
+      Anthropic-Ratelimit-Output-Tokens-Limit:
+      - '8000'
+      Anthropic-Ratelimit-Output-Tokens-Remaining:
+      - '8000'
+      Anthropic-Ratelimit-Output-Tokens-Reset:
+      - '2024-12-24T01:53:27Z'
+      Anthropic-Ratelimit-Tokens-Limit:
+      - '48000'
+      Anthropic-Ratelimit-Tokens-Remaining:
+      - '48000'
+      Anthropic-Ratelimit-Tokens-Reset:
+      - '2024-12-24T01:53:27Z'
+      Request-Id:
+      - req_017nA1TdY8P4y2FbDcRjzQad
+      Via:
+      - 1.1 google
+      Cf-Cache-Status:
+      - DYNAMIC
+      X-Robots-Tag:
+      - none
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8f6cf52e3c90bf51-WAW
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"msg_01Nf12hm4xYDvN4BZuoY2TaY","type":"message","role":"assistant","model":"claude-3-5-sonnet-20241022","content":[{"type":"text","text":"beebee"}],"stop_reason":"end_turn","stop_sequence":null,"usage":{"input_tokens":63,"cache_creation_input_tokens":0,"cache_read_input_tokens":0,"output_tokens":6}}'
+  recorded_at: Tue, 24 Dec 2024 01:53:27 GMT
+recorded_with: VCR 6.3.1

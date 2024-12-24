@@ -1,6 +1,8 @@
 module Serializers
   module V1
     class RecipeSerializer
+      include ActionView::Helpers::TextHelper
+
       def initialize(recipe:)
         @recipe = recipe
       end
@@ -8,7 +10,7 @@ module Serializers
       def to_h
         {
           id: id,
-          content: content,
+          content: simple_format(content),
           name: name,
           status: status
         }

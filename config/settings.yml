@@ -1,4 +1,8 @@
+db:
+  username: 'username'
+  password: 'super-secret'
 anthropic_api:
   base_url: https://api.anthropic.com/v1
+  api_key: 'super-secret'
   model: 'claude-3-5-sonnet-20241022'
   timeout: 30

@@ -4,6 +4,192 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/v1/ingredients":
+    post:
+      summary: create an ingredient
+      tags:
+      - Ingredients
+      parameters: []
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                    nullable: true
+                  status:
+                    type: string
+                  input:
+                    type: string
+        '400':
+          description: bad_request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                input:
+                  type: string
+              required:
+              - input
+    get:
+      summary: get an ingredient
+      tags:
+      - Ingredients
+      responses:
+        '200':
+          description: created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                      nullable: true
+                    status:
+                      type: string
+                    input:
+                      type: string
+  "/api/v1/ingredients/{id}":
+    get:
+      summary: get an ingredient
+      tags:
+      - Ingredients
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                    nullable: true
+                  status:
+                    type: string
+                  input:
+                    type: string
+        '404':
+          description: Ingredient not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  "/api/v1/recipes":
+    post:
+      summary: create an ingredient
+      tags:
+      - Recipes
+      parameters: []
+      responses:
+        '201':
+          description: created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  content:
+                    type: string
+                    nullable: true
+                  status:
+                    type: string
+        '400':
+          description: bad_request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '404':
+          description: recipe_not_found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ingredient_ids:
+                  type: array
+              required:
+              - ingredient_ids
+  "/api/v1/recipes/{id}":
+    get:
+      summary: get a recipe
+      tags:
+      - Recipes
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                    nullable: true
+                  status:
+                    type: string
+        '404':
+          description: Recipe not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
   "/api/v1/status":
     get:
       summary: v1 status

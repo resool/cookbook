@@ -8,8 +8,7 @@ module Serializers
       def to_h
         {
           id: id,
-          name: name,
-          input: input,
+          name: name || input,
           status: status
         }
       end

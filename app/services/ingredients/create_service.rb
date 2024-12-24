@@ -7,9 +7,7 @@ module Ingredients
     def call
       validate_input
 
-      create_ingredient.tap do |ingredient|
-        # TODO: call background job
-      end
+      create_ingredient
     end
 
     private
